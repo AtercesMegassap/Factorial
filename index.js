@@ -17,7 +17,7 @@ const calculateFactorial = (number) =>{
 app.get('/Factorial', (req, res) => {
   const {number} = req.body;
 
-  if(!typeof number === "number") return res.json(`Please input a natural number.`);
+  if(typeof number !== "number") return res.json(`Please input a natural number.`);
   if(number < 0 ) return res.json(`Please input a natural number.`);
 
   const factorial = calculateFactorial(number);
